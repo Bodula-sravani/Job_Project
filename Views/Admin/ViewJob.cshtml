@@ -4,14 +4,12 @@
 @{
 }
 
+
 @{
-    ViewData["Title"] = "Delete page";
+    ViewData["Title"] = "Admin page";
 }
 <h1>@ViewData["Title"]</h1>
-@{
-    Jobs job = (Jobs)ViewData["job"];
-}
-
+<a class='btn-primary btn-sm' style="text-decoration: none" href="/Admin/AddJob">Add Job</a>
 <table class="table">
     <thead>
         <tr>
@@ -22,20 +20,25 @@
             <th>Job Category</th>
         </tr>
     </thead>
-    <tbody>
+
+    @foreach (var job in (List<Jobs>)ViewData["jobsList"])
+    {
         <tr>
             <td>@job.Id</td>
             <td>@job.Name</td>
             <td>@job.Description</td>
             <td>@job.employeerName</td>
             <td>@job.category</td>
+            <td>
+                <a style="text-decoration: none" href=/Admin/UpdateJob/?Id=@job.Id>
+                <button class="btn btn-primary">Edit</button></a>
+            </td>
+            <td>
+                <a style="text-decoration: none" href=/Admin/DeleteJob/?Id=@job.Id>
+                    <button class="btn btn-danger btn-sm">Delete</button></a>
+            </td>
         </tr>
-    </tbody>
+    }
 </table>
-<p>Confirm to delete this Job?</p>
-<div>
-    <form method="post">
-        <button type="submit" class="btn btn-primary btn-sm">Yes</button>
-    </form>
-    <a href="/Admin/CreateBook"><button class="btn btn-danger btn-sm">No</button></a>
-</div>
+
+

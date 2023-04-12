@@ -8,41 +8,44 @@
     ViewData["Title"] = "Update page";
 }
 <h1>@ViewData["Title"]</h1>
-<form method="post">
-    <input type="hidden" name="Id" value="@Model.book.Id"/>
+@{
+    Jobs currentJob = (Jobs)ViewData["job"];
+}
+<form method="put" action="UpdateConfirm">
+  
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Id</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Title" value="(Jobs)@ViewData["job"]" required />
+            <input type="text" class="form-control" name="Title" value="@currentJob.Id" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Name</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Category" value="(Jobs)@ViewData["job"]" required />
+            <input type="text" class="form-control" name="Category" value="@currentJob.Name" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job category</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Author" value="(Jobs)@ViewData["job"]" required />
+            <input type="text" class="form-control" name="Author" value="@currentJob.category" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Employeer Name</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Author" value="(Jobs)@ViewData["job"]" required />
+            <input type="text" class="form-control" name="Author" value="@currentJob.employeerName" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Description</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Author" value="(Jobs)@ViewData["job"]" required />
+            <input type="text" class="form-control" name="Author" value="@currentJob.Description" required />
         </div>
     </div>
     <div>
