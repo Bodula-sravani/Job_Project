@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{
+    ViewData["Title"] = "Admin page";
+}
+<h1>@ViewData["Title"]</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Job ID</th>
+            <th>Job Name</th>
+            <th>Job Description</th>
+            <th>Job Employeer Name</th>
+            <th>Job Category</th>
+        </tr>
+    </thead>
+
+    @foreach (var job in (List<Jobs>)ViewData["jobsList"])
+    {
+        <tr>
+            <td>@job.Id</td>
+            <td>@job.Name</td>
+            <td>@job.Description</td>
+            <td>@job.employeerName</td>
+            <td>@job.category</td>
+            <td>
+                <a style="text-decoration: none" href=/Admin/UpdateJob/?Id=@job.Id>
+                <button class="btn btn-primary">Edit</button></a>
+            </td>
+            <td>
+                <a style="text-decoration: none" href=/Admin/DeleteJob/?Id=@job.Id>
+                    <button class="btn btn-danger btn-sm">Delete</button></a>
+            </td>
+        </tr>
+    }
+</table>
+
+
