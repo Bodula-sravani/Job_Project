@@ -12,40 +12,38 @@
     Jobs currentJob = (Jobs)ViewData["job"];
 }
 <form method="post" action="UpdateConfirm">
-  
-
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Id</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Title" value="@currentJob.Id" required />
+            <input type="text" class="form-control" name="Id" value="@currentJob.Id" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Name</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Category" value="@currentJob.Name" required />
+            <input type="text" class="form-control" name="Name" value="@currentJob.Name" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job category</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Author" value="@currentJob.category" required />
+            <input type="text" class="form-control" name="category" value="@currentJob.category" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Employeer Name</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Author" value="@currentJob.employeerName" required />
+            <input type="text" class="form-control" name="Employeer Name" value="@currentJob.employeerName" required />
         </div>
     </div>
 
     <div class="row mb-3">
         <label class="col-sm-1 col-form-label">Job Description</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" name="Author" value="@currentJob.Description" required />
+            <input type="text" class="form-control" name="Description" value="@currentJob.Description" required />
         </div>
     </div>
     <div>
